@@ -2,7 +2,7 @@
 Suite of programs meant to aid in bug hunting and security assessments 
 
 ## Why this weird name?
-Just because I heard it first [here])https://youtu.be/lIFE7h3m40U?t=661) so I thought this meaningless word would be fitting name of a repository I don't know what I'm going to do with.
+Just because I heard it first [here](https://youtu.be/lIFE7h3m40U?t=661) so I thought this meaningless word would be fitting name of a repository I don't know what I'm going to do with.
 
 ## Contents
 This repository contains scripts that I wrote or modified other pre-existing scripts, which are useful in Bug Bounty Hunting and Security Assessments of websites.
