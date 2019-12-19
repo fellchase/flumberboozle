@@ -19,21 +19,23 @@ Flumberbuckets is a really simple script which combines the best of existing S3 
 
 ![Flumberbuckets in action](https://user-images.githubusercontent.com/11918572/70925128-bbe45f80-2050-11ea-99aa-ba85fac325b6.gif)
 
-- You may want to switch over for any of the following reasons
-- Sorting out nonexistent buckets with DNS(massdns) resolution rather than HTTP
+You may want to switch over for any of the following reasons
+- Faster sorting out nonexistent buckets with DNS(massdns) resolution rather than HTTP
 - Multi-threaded enumeration of existent buckets to find misconfiguration
-- Cleaner visual output which you can copy and store for later 
+- Cleaner visual output, you can select if you want to just see vulnerable buckets or see all the buckets that exist even though they are not vulnerable. You can save output with -o & --no-colour option 
 - Several vulnerability tests available like LIST, ACL , POLICY , CORS , REPLICATION , WEBSITE , LOCATION , LOGGING , UPLOAD , DELETE. 
-- You can decide what tests you want to run on a buckets run all if you want run only 1 if you're in hurry 
-- I also included DELETE test It's the most overlooked by S3 bucket automation tools
-- Much more functionality and options that even I'm exhausted writing about it just check the "Detailed Usage" section
-- Just try it, maybe you'll get your first bounty 
+- You can decide what tests you want to run on a buckets run all if you want or run only a few if you're in hurry 
+- I also included DELETE test It's the most overlooked by S3 bucket enumeration tools
+- Much more functionality and options compared to other tools
+- Enumerating a list of custom buckets, single bucket, enumerating all buckets with a keyword in their name
+- Option to accept list of FQDNs or domains for enumeration like assets.example.com can be found by sublister and then you can make a list of subdomains you found and feed it into flumberbuckets, It maybe that company is using S3 bucket with the same name as domain name so it'll check if the bucket "assets.example.com" is vulnerable or not
+- Just try it, 200 lines of code delivers a lot of functionality here 
 
 
 Note: The performance of flumberbuckets is subject to your connection bandwidth speed and hardware
 
 ## Installation & Usage
-Refer article published on my blog 
+Refer article published on my blog for installation, dependencies and usage 
 [Releasing Flumberbuckets: S3 Bucket Enumeration Tool for Bug Hunters](https://fellchase.blogspot.com/2019/12/releasing-flumberbuckets-s3-bucket-enumeration-tool.html)
 
 ## Credits
