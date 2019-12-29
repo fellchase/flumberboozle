@@ -146,7 +146,7 @@ def find_live_buckets():
     mdns_resolve = "{} -r {} --error-log /dev/stderr -q -o S - | tr '[:upper:]' '[:lower:]' | sort -u".format(args.mdns_path, args.resolver_path)
     print(' '*cols,end='\r') # Cleaning up the terminal line
     print(green + '[+]' + X, "Sorting buckets", end='\r')
-    output = subprocess.run("< {} {} | grep -v 's3-1-w.amazonaws.com' | grep -v directional | cut -d ' ' -f1 | sed 's/.s3.amazonaws.com.//'".format(potential_buckets_file, mdns_resolve), shell=True, capture_output=True)
+    output = subprocess.run("< {} {} | grep -v 's3-1-w.amazonaws.com' | grep -v directional | cut -d ' ' -f1 | sed 's/.s3.amazonaws.com.//'".format(potential_buckets_file, mdns_resolve), shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     os.remove(potential_buckets_file)
     if len(output.stdout.decode().strip('\n')) == 0:
         print(red + '[-]' + X, "No bucket was found")
